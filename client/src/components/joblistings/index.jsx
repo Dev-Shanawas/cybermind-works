@@ -1,6 +1,10 @@
 import {Card , Group , Text , Badge,Button , Container, Flex} from "@mantine/core"
 import amazon from "../../assets/Amazon.png"
 import { IconSearch } from '@tabler/icons-react';
+import { BsBuildingAdd } from "react-icons/bs";
+import { CiLocationOn } from "react-icons/ci";
+import { TbStack2 } from "react-icons/tb";
+import { GoPeople } from "react-icons/go";
 
 function JobListings() {
     return ( 
@@ -31,16 +35,16 @@ function JobListings() {
         gap="30px"
         >
 <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-  <IconSearch width="18px"/>
-  <span style={{ marginLeft: '3px' }}>efsf</span>
+  <GoPeople width="18px"/>
+  <span style={{ marginLeft: '3px' }}>1-3 yr</span>
 </div>
 <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-  <IconSearch width="18px"/>
-  <span style={{ marginLeft: '3px' }}>efsf</span>
+  <BsBuildingAdd width="18px"/>
+  <span style={{ marginLeft: '3px' }}>Onsite</span>
 </div>
 <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-  <IconSearch width="18px"/>
-  <span style={{ marginLeft: '3px' }}>efsf</span>
+  <TbStack2 width="18px"/>
+  <span style={{ marginLeft: '3px' }}>12LPA</span>
 </div>
 
         </Flex>

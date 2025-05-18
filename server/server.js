@@ -10,7 +10,7 @@ PORT  = process.env.PORT || 5002
 const MONGO_URI = process.env.MONGOOSE_URI ;
 
 app.use(cors({
-    origin: "https://cybermind-works-smoky.vercel.app",
+    origin: "*",
     methods: ["GET" ,"POST","PUT","DELETE"],
     allowedHeaders: ["Content-Type" , "Authorization"]
 }))

@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose')
 const createJob = require("./routes/create-job/index.js")
+const getJobs = require('./routes/create-job/index.js')
 const app = express()
 
 PORT  = process.env.PORT || 5002
@@ -21,6 +22,7 @@ mongoose
 app.use(express.json())
 
 app.use('/api', createJob )
+app.use('/api' , getJobs)
 
 app.listen(PORT,()  => {
     console.log(`App is running on the port ${PORT} `)

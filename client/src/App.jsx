@@ -3,23 +3,16 @@ import Filers from "./components/filters/index.jsx";
 import JobListings from "./components/joblistings/index.jsx";
 import { useEffect } from "react";
 import axios from "axios";
+import axiosInstance from "./api/axiosInstance.js";
+import { useState } from "react";
 function App() {
 
-useEffect(() => {
-  async function fetchJobs() {
-    const response = await axios.post("http://localhost:5002/api/get-job");
-    const data = response.data.data;
 
-    console.log(data);
-  }
-  fetchJobs();
-}, []);
 
   return (
   <>
     <Navbar></Navbar>
-    <Filers></Filers>
-    <JobListings></JobListings>
+    <JobListings ></JobListings>
   </>
   )
 }

@@ -67,19 +67,19 @@ applicationDeadline: new Date(),     jobDescription: "",
         }
       );
 
-      if (response.data.flag) {
-        setIsCreateModalOpen(false);
+      console.log(response)
+
+      if (response.data.success) {
+          close()
         alert("Job posted successfully");
         setJobData({
-          jobTitle: "",
-          companyName: "",
-          location: "",
-          jobType: "",
-          salaryRangeMin: "",
-          salaryRangeMax: "",
-          applicationDeadline: "",
-          jobDescription: "",
-          submitType: submitType,
+    jobTitle: "",
+    companyName: "",
+    location: "",
+    jobType: "",
+    salaryRangeMin: "",
+    salaryRangeMax: "",
+applicationDeadline: new Date(),     jobDescription: "",
         });
       }
     } catch (error) {

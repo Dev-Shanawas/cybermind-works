@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:5002'
+    baseURL: 'https://cybermind-works-l4t9.vercel.app/'
 })
 
 export default axiosInstance 

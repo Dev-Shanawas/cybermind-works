@@ -56,7 +56,7 @@ applicationDeadline: new Date(),     jobDescription: "",
       console.log({ ...jobData });
 
       const response = await axios.post(
-        "http://localhost:5002/api/create-job",
+        "https://cybermind-works-l4t9.vercel.app/api/create-job",
         {
           data: jobData,
         },

@@ -8,7 +8,13 @@ const app = express()
 
 PORT  = process.env.PORT || 5002
 const MONGO_URI = process.env.MONGOOSE_URI ;
-app.use(cors());
+
+app.use(cors({
+    origin: "https://cybermind-works-smoky.vercel.app",
+    methods: ["GET" ,"POST","PUT","DELETE"],
+    allowedHeaders: ["Content-Type" , "Authorization"]
+}))
+
 mongoose
     .connect(MONGO_URI)
     .then(()=> console.log("MongoDB Connection created successfully"))

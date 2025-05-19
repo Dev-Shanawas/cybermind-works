@@ -21,10 +21,7 @@ function JobListings() {
     const [jobs, setJobs] = useState([]); // filtered jobs
 const [allJobs, setAllJobs] = useState([]); // original full list
 
-
-
-    useEffect(() => {
-  async function fetchJobs() {
+ async function fetchJobs() {
     const response = await axiosInstance.get("/api/get-job");
     console.log(response)
     console.log("This is res")
@@ -32,15 +29,34 @@ const [allJobs, setAllJobs] = useState([]); // original full list
     setAllJobs(data);
     setJobs(data); 
 }
+
+    useEffect(() => {
+ 
   fetchJobs();
 }, []);
 
 function filerLocation(e){
+    if(e == null){
+      fetchJobs()
+      return
+  }
  setLocation(e);
   const filtered = allJobs.filter(
     (job) => job.location.toLowerCase() === e.toLowerCase()
   );
   setJobs(filtered);
+}
+
+function filerJobType(e){
+  if(e == null){
+      fetchJobs()
+      return
+  }
+    const filtered = allJobs.filter(
+    (job) => job.jobType.toLowerCase() === e.toLowerCase()
+  );
+  setJobs(filtered)
+
 }
 
 console.log(location)
@@ -76,12 +92,13 @@ console.log(location)
     <Divider orientation="vertical" />
     <Select
               leftSection={<HiOutlineInboxStack  size={16} />}
+              onChange={(e) => filerJobType(e)}
 
       style={{ flex: 1, border: "none", outline: "none" }}
       variant="unstyled"
 
       placeholder="Job Type"
-      data={['FullTime', 'PartTime', 'Vue', 'Svelte']}
+      data={['FullTime', 'PartTime', 'Contract', 'Internship']}
     />
     <Divider orientation="vertical" />
     <Flex
